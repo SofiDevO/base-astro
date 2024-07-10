@@ -1,0 +1,121 @@
+.header__menu {
+  flex-basis: auto;
+}
+
+.header__list {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    top: -11px;
+    transform: translateX(100%);
+    left: 0;
+    background: var(--color-background-header-menu);
+    backdrop-filter: blur(22px);
+    min-height: 100dvh;
+    padding: 1rem 2rem;
+    width: 100vw;
+    z-index: 40;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .header__item {
+    margin-right: 1.5rem;
+  }
+}
+
+.header__link {
+  text-decoration: none;
+  color: var(--color-link);
+
+  @media screen and (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__list > *:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 80%;
+  right: 0;
+  background-color: var(--color-dropdown-background); /* Utilizando la variable para el color de fondo del dropdown */
+  box-shadow: 0 8px 16px var(--box-shadow-color);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 160px;
+  max-width: 160px;
+  z-index: 1;
+
+  @media screen and (max-width: 768px) {
+    top: auto;
+    left: 0;
+  }
+}
+.dropdown__item {
+  padding: 8px 16px;
+  background-color: black;
+  &:hover {
+    background: darkgray;
+  }
+}
+
+.dropdown__item:hover .dropdow__link {
+  color: black;
+}
+
+.dropdow__link {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+li:hover .dropdown {
+  display: block;
+  background-color: var(--color-dropdown-background);
+}
+
+.header__link--dropdown{
+  display: flex;
+  align-items: center;
+}
+.header__list.is-active {
+  transform: translateX(0%);
+}
+
+.dropdown__icon  iconify-icon{
+  transform: rotate(0deg);
+  transition: transform .3s linear;
+}
+.dropdown__icon.dropdown-active iconify-icon{
+  transform: rotate(-180deg);
+
+}
+.header__link {
+  position: relative;
+}
+.header__link::after {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  content: "";
+  width: 100%;
+  transform: scale(0);
+  transform-origin: 1;
+  height: 2px;
+  background: var(--color-link);
+  transition: 0.35s transform;
+}
+.header__link:hover::after {
+  transform: scale(1);
+}

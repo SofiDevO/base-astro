@@ -1,0 +1,59 @@
+:root {
+    --color-background-body: #06080c;
+    --color-background-before: #090c12;
+    --color-gradient1-start: rgba(26, 244, 208, 0.3);
+    --color-gradient1-end: rgba(0, 124, 120, 0);
+    --color-gradient2-start: rgba(26, 237, 244, 0.5);
+    --color-gradient2-middle: rgba(0, 124, 120, 0.4);
+    --color-gradient2-end: rgba(0, 124, 116, 0);
+    --color-gradient3-start: rgba(26, 244, 230, 0.2);
+    --color-gradient3-middle: rgba(0, 97, 124, 0.1);
+    --color-gradient3-end: rgba(0, 124, 112, 0);
+    --color-gradient4-start: rgba(0, 105, 124, 0.075);
+    --color-gradient4-end: rgba(0, 124, 71, 0.05);
+    --color-background-gradient5: #0d1017;
+    --color-gradient6-start: rgba(40, 197, 218, 0.5);
+    --color-background-gradient6: #0d1017;
+    --color-background-after: #13161c;
+    --color-text: white;
+
+    /* Nuevas variables */
+    --color-link: #00ffea;
+    --color-background-header-menu: rgba(0, 0, 0, 0.588);
+    --box-shadow-color: rgba(0, 0, 0, 0.2);
+    --color-dropdown-background: #f1f1f1; /* Nueva variable para el color de fondo del dropdown */
+
+    /* Nuevas variables para los colores del menú hamburguesa */
+  --color-hamburger-background: rgba(0, 0, 0, 0.588);
+  --color-hamburger-lines: aqua; /* Color de las líneas del hamburguesa */
+  }
+
+
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    margin: 0;
+    font-size: 62.5%;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+  }
+
+  body {
+    background-color: var(--color-background-body);
+    color: var(--color-text);
+    overflow-x: hidden;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 1.6rem;
+  }
+
+  li {
+    list-style: none;
+  }
