@@ -1,4 +1,15 @@
-# frida-ai
+# Base-astro
+
+Base astro is a clean template to start a new landing page project, that includes a gradient background and responsive hamburger/dropdown menu 💜🚀
+
+
+## Use this template by running this command:
+
+```
+npm create astro@latest -- --template  SofiDevO/base-astro
+```
+
+
 
 Propuesta
 
