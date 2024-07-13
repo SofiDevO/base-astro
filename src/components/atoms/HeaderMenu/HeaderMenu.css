@@ -47,7 +47,7 @@
 .dropdown {
   display: none;
   position: absolute;
-  top: 80%;
+  top: 70%;
   right: 0;
   background-color: var(--color-dropdown-background); /* Utilizando la variable para el color de fondo del dropdown */
   box-shadow: 0 8px 16px var(--box-shadow-color);
