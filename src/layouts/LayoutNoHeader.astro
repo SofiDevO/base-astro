@@ -1,20 +1,18 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import Header from "../components/organisms/header/Header.astro";
+import BaseHead from "@components/BaseHead.astro";
 import GradientBg from "@components/atoms/GradientBg/GradientBg.astro";
 ---
 
 <html lang="en">
   <head>
+
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
     <GradientBg/>
-      <Header/>
-      <main>
-        <slot />
-      </main>
-    <!-- <Footer /> -->
+    <main>
+      <slot />
+    </main>
   </body>
 </html>

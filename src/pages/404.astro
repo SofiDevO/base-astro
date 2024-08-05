@@ -1,0 +1,38 @@
+---
+import LayoutNoHeader from "../layouts/LayoutNoHeader.astro";
+import Title from "@components/atoms/Title/Title.astro";
+import Button from "@components/atoms/Button/Button.astro";
+---
+
+<script>
+ document.getElementById('backButton').addEventListener('click', function() {
+    window.history.back();
+  });
+  </script>
+
+<LayoutNoHeader>
+  <section class="error">
+    <Title title="404 NOT FOUND" size="big" />
+    <p class="error__message">La pagina a la que tratas de acceder no existe</p>
+    <Button text="Volver" id="backButton"/>
+  </section>
+</LayoutNoHeader>
+
+<style>
+  .error {
+    width: 100%;
+    min-height: 100dvh;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    gap: 1rem;
+  }
+
+  .error__message {
+    font-size: 1.8rem;
+  }
+
+  .error > *:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+</style>

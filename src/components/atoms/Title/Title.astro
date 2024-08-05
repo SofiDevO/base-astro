@@ -1,0 +1,22 @@
+---
+const {title, size="big"} = Astro.props;
+
+---
+
+<h2 class={`title text-gradient ${size} `}>{title}</h2>
+
+<style>
+    .title{
+        font-weight: 600;
+    }
+    .big{
+        font-size: 4rem;
+    }
+    .medium{
+        font-size: 3rem;
+    }
+    .small{
+        font-size: 2.5rem;
+    }
+
+</style>

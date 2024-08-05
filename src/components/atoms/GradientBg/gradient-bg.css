@@ -1,0 +1,73 @@
+.background {
+    background-color: var(--color-background-body);
+    position: relative;
+    z-index: 1;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .backgroud:after,
+  .backgroud:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    z-index: -10;
+
+  }
+
+  .backgroud:before {
+    content: "";
+    position: absolute;
+    background-color: #090c12;
+    background-image: radial-gradient(
+        37.88% 68.62% at 50% 0,
+        var(--color-gradient1-start) 0%,
+        var(--color-gradient1-end) 80%
+      ),
+      radial-gradient(
+        10% 10% at 50% 10%,
+        var(--color-gradient2-start) 0%,
+        var(--color-gradient2-middle) 90%,
+        var(--color-gradient2-end) 100%
+      ),
+      radial-gradient(
+        100% 28.09% at 100% 10%,
+        var(--color-gradient3-start) 0%,
+        var(--color-gradient3-middle) 80%,
+        var(--color-gradient3-end) 100%
+      ),
+      linear-gradient(
+        180deg,
+        var(--color-gradient4-start) 35.79%,
+        var(--color-gradient4-end) 80%,
+        var(--color-background-gradient5) 80%
+      ),
+      radial-gradient(
+        74.84% 135.56% at 100% 10%,
+        var(--color-gradient6-start) 0%,
+        var(--color-background-gradient6) 80%
+      );
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100svh;
+    z-index: -2;
+    filter: blur(50px);
+    top: -50px;
+    left: -50px;
+    right: -50px;
+    width:100%;
+  }
+
+
+
+  .background:after {
+    content: "";
+    background-color:var(--color-background-after);
+    z-index: -3;
+  }
