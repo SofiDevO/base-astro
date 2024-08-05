@@ -1,62 +1,78 @@
 :root {
   /* background gradient */
-    --color-background-body: #06080c;
-    --color-background-before: #090c12;
-    --color-gradient1-start: rgba(142, 26, 244, 0.3);
-    --color-gradient1-end: rgba(50, 0, 124, 0);
-    --color-gradient2-start: rgba(135, 26, 244, 0.5);
-    --color-gradient2-middle: rgba(74, 0, 124, 0.4);
-    --color-gradient2-end: rgba(78, 0, 124, 0);
-    --color-gradient3-start: rgba(142, 26, 244, 0.2);
-    --color-gradient3-middle: rgba(70, 0, 124, 0.1);
-    --color-gradient3-end: rgba(56, 0, 124, 0);
-    --color-gradient4-start: rgba(52, 0, 124, 0.075);
-    --color-gradient4-end: rgba(70, 0, 124, 0.05);
-    --color-background-gradient5: #100d17;
-    --color-gradient6-start: rgba(129, 40, 218, 0.5);
-    --color-background-gradient6: #110d17;
-    --color-background-after: #18131c;
+  --color-background-body: #06080c;
+  --color-background-before: #090c12;
+  --color-gradient1-start: rgba(26, 113, 244, 0.3);
+  --color-gradient1-end: rgba(0, 31, 124, 0);
+  --color-gradient2-start: rgba(26, 91, 244, 0.5);
+  --color-gradient2-middle: rgba(0, 37, 124, 0.4);
+  --color-gradient2-end: rgba(0, 72, 124, 0);
+  --color-gradient3-start: rgba(26, 95, 244, 0.2);
+  --color-gradient3-middle: rgba(0, 29, 124, 0.1);
+  --color-gradient3-end: rgba(0, 41, 124, 0);
+  --color-gradient4-start: rgba(0, 21, 124, 0.075);
+  --color-gradient4-end: rgba(0, 52, 124, 0.05);
+  --color-background-gradient5: #100d17;
+  --color-gradient6-start: rgba(40, 76, 218, 0.5);
+  --color-background-gradient6: #0d0e17;
+  --color-background-after: #18131c;
 
 
 
-/* Base */
-    --color-text: white;
-    --color-link: #00ffe1;
-    --color-background-header-menu: rgba(0, 0, 0, 0.514);
-    --box-shadow-color: rgba(0, 0, 0, 0.2);
-    --color-dropdown-background: #f1f1f1; /* Nueva variable para el color de fondo del dropdown */
+  /* Base */
+  --color-text: white;
+  --color-link: #00ffe1;
+  --color-background-header-menu: rgba(0, 0, 0, 0.514);
+  --box-shadow-color: rgba(0, 0, 0, 0.2);
+  --color-dropdown-background: #f1f1f1;
+  /* Nueva variable para el color de fondo del dropdown */
 
-    /* Nuevas variables para los colores del menú hamburguesa */
+  /* Nuevas variables para los colores del menú hamburguesa */
   --color-hamburger-background: rgba(0, 0, 0, 0.588);
-  --color-hamburger-lines: aqua; /* Color de las líneas del hamburguesa */
-  }
+  --color-hamburger-lines: aqua;
+
+  /* gradientes */
+--radial-gradient:radial-gradient(circle,
+rgba(40, 255, 187, 1) 0%,
+rgba(114, 0, 232, 1) 100%);
+
+}
 
 
 
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  html {
-    margin: 0;
-    font-size: 62.5%;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-  }
+html {
+  margin: 0;
+  font-size: 62.5%;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+}
 
-  body {
-    background-color: var(--color-background-body);
-    color: var(--color-text);
-    overflow-x: hidden;
-  }
+body {
+  background-color: var(--color-background-body);
+  color: var(--color-text);
+  overflow-x: hidden;
+}
 
-  a {
-    text-decoration: none;
-    font-size: 1.6rem;
-  }
+a {
+  text-decoration: none;
+  font-size: 1.6rem;
+}
 
-  li {
-    list-style: none;
-  }
+li {
+  list-style: none;
+}
+
+
+
+.text-gradient {
+  background: var(--radial-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
