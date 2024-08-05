@@ -13,25 +13,6 @@ const HeaderMenu = () => {
   const closePanel = () => {
     setIsActive(false);
   };
-  const [dropdownActive, setDropdownActive] = useState(false);
-
-  const handleDropDownEnter = () => {
-    setDropdownActive(true);
-  };
-
-  const handleDropdownLeave = () => {
-    setDropdownActive(false);
-  };
-
-  const [showDropdown, setShowDropdown] = useState(false);
-
-  const handleMouseEnter = () => {
-    setShowDropdown(true);
-  };
-
-  const handleMouseLeave = () => {
-    setShowDropdown(false);
-  };
 
   return (
     <>
@@ -41,52 +22,14 @@ const HeaderMenu = () => {
             <li
               key={index}
               className="header__item"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              onClick={handleMouseEnter}
             >
-              {item.dropdown ? (
-                <a
-                  onMouseEnter={handleDropDownEnter}
-                  onMouseLeave={handleDropdownLeave}
-                  className="header__link header__link--dropdown"
-                  href={item.href || "#"}
-                >
-                  {item.text}
-                  <span
-                    className={`dropdown__icon  ${dropdownActive ? "  dropdown-active" : " "}`}
-                  >
-                    <iconify-icon
-                      style={{ fontSize: "25px" }}
-                      icon="gridicons:dropdown"
-                    ></iconify-icon>
-                  </span>
-                </a>
-              ) : (
-                <a
-                  onClick={closePanel}
-                  className="header__link  header__link--regular"
-                  href={item.href || "#"}
-                >
-                  {item.text}
-                </a>
-              )}
-
-              {item.dropdown && showDropdown && (
-                <ul className="dropdown">
-                  {item.submenu.map((subItem, subIndex) => (
-                    <li className="dropdown__item" key={subIndex}>
-                      <a
-                        onClick={closePanel}
-                        className="header__link dropdow__link"
-                        href={subItem.link}
-                      >
-                        {subItem.text}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              )}
+              <a
+                onClick={closePanel}
+                className="header__link  header__link--regular"
+                href={item.href || "#"}
+              >
+                {item.text}
+              </a>
             </li>
           ))}
         </ul>
