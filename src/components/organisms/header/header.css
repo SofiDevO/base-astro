@@ -16,9 +16,10 @@
     height: 8dvh;
     margin-top: 2rem;
     max-width: 1200px;
-    background: rgba(0, 0, 0, 0.3607843137);
+    background: #0000007d;
     border-radius: 16px;
     padding: 1rem 2rem;
+    backdrop-filter: blur(14px);
 }
 
 @media screen and (max-width: 768px) {
@@ -26,12 +27,12 @@
         padding: 0 1rem;
     }
     .header__container {
+        justify-content: space-between;
+        align-self: center;
         width: 95%;
         height: auto;
         margin-top: 1.5rem;
-        align-self: center;
         min-width: 24rem;
-        justify-content: space-between;
         padding: .8rem 1rem;
     }
 }
