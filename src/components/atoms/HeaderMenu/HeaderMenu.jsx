@@ -14,15 +14,14 @@ const HeaderMenu = () => {
     setIsActive(false);
   };
 
+  const ElementActivate = isActive ? "is-active" : "";
+
   return (
     <>
-      <nav className="header__menu">
-        <ul className={`header__list ${isActive ? "is-active" : ""}`}>
+      <nav className={`header__menu ${ElementActivate}`}>
+        <ul className={`header__list ${ElementActivate}`}>
           {headerMainMenu.map((item, index) => (
-            <li
-              key={index}
-              className="header__item"
-            >
+            <li key={index} className="header__item">
               <a
                 onClick={closePanel}
                 className="header__link  header__link--regular"
@@ -34,10 +33,7 @@ const HeaderMenu = () => {
           ))}
         </ul>
       </nav>
-      <HamburgerBtn
-        classActive={isActive ? "is-active" : ""}
-        onClick={toggleActive}
-      />
+      <HamburgerBtn classActive={ElementActivate} onClick={toggleActive} />
     </>
   );
 };

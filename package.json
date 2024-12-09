@@ -1,5 +1,5 @@
 {
-  "name": "frida-ai",
+  "name": "base-astro",
   "version": "1.0.0",
   "description": "Propuesta",
   "main": "index.js",
@@ -9,17 +9,14 @@
     "build": "astro build",
     "preview": "astro preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "@astrojs/react": "^3.6.0",
-    "@fontsource-variable/inter": "^5.0.19",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "astro": "^4.11.5",
-    "prettier": "^3.3.2",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "@astrojs/react": "4.0.0",
+    "@fontsource-variable/inter": "5.1.0",
+    "@types/react": "18.3.14",
+    "@types/react-dom": "18.3.2",
+    "astro": "5.0.3",
+    "prettier": "3.4.2",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
   }
 }

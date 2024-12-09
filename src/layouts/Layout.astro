@@ -10,11 +10,27 @@ import GradientBg from "@components/atoms/GradientBg/GradientBg.astro";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <GradientBg/>
-      <Header/>
-      <main>
-        <slot />
-      </main>
+    <GradientBg />
+    <Header />
+    <main>
+      <slot />
+    </main>
     <!-- <Footer /> -->
   </body>
 </html>
+
+<style is:global>
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    height: 100vh;
+  }
+</style>
