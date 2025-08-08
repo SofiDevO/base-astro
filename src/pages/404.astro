@@ -2,6 +2,7 @@
 import LayoutNoHeader from "../layouts/LayoutNoHeader.astro";
 import Title from "@components/atoms/Title/Title.astro";
 import Button from "@components/atoms/Button/Button.astro";
+import Layout from "@src/layouts/Layout.astro";
 ---
 
 <script>
@@ -10,13 +11,14 @@ import Button from "@components/atoms/Button/Button.astro";
   });
   </script>
 
-<LayoutNoHeader>
+<Layout>
+
   <section class="error">
     <Title title="404 NOT FOUND" size="big" />
     <p class="error__message">La pagina a la que tratas de acceder no existe</p>
     <Button text="Volver" id="backButton"/>
   </section>
-</LayoutNoHeader>
+</Layout>
 
 <style>
   .error {

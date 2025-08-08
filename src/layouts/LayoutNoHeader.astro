@@ -1,18 +1,18 @@
 ---
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import BaseHead from "@components/BaseHead.astro";
-import GradientBg from "@components/atoms/GradientBg/GradientBg.astro";
+import BackgroundGradient from "@components/atoms/GradientBg/BackgroundGradient.astro";
 ---
 
 <html lang="en">
   <head>
-
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <GradientBg/>
     <main>
-      <slot />
+      <BackgroundGradient>
+        <slot />
+      </BackgroundGradient>
     </main>
   </body>
 </html>

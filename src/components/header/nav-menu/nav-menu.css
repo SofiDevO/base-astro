@@ -1,0 +1,162 @@
+ .header__menu {
+   @media (width < 768px) {
+    display: none;
+   }
+ }
+
+ .header__menu.is-active {
+   transform: translateX(-10%);
+ }
+
+ .menu {
+   padding: 1rem;
+   list-style: none;
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+
+   @media (width < 768px) {
+     flex-direction: column;
+   }
+ }
+
+
+ .menu__link {
+   text-decoration: none;
+   padding: 0.5rem 1rem;
+   display: flex;
+   align-items: center;
+   gap: 0.8rem;
+   color: aqua;
+   position: relative;
+ }
+
+ .menu__link::after {
+   position: absolute;
+   top: 25px;
+   left: 0;
+   content: "";
+   width: 100%;
+   transform: scale(0);
+   transform-origin: 1;
+   height: 2px;
+   transition: transform 0.3s ease;
+   background: aqua;
+ }
+
+ .menu__link:hover::after {
+   transform: scale(1);
+ }
+
+
+
+ .iconify-arrow {
+   transition: transform 0.3s linear;
+ }
+
+ .menu__link:hover > .iconify-arrow {
+   transform: rotate(180deg);
+ }
+
+
+
+ .submenu,
+ .subsubmenu {
+   background-color: #171717;
+   border: 0.5px solid #3e1c71;
+   position: absolute;
+   flex-direction: column;
+   gap: 0.4rem;
+   padding: 1rem;
+   border-radius: 0.6rem;
+   transition: transform 0.3s ease-in-out;
+   pointer-events: none;
+   opacity: 0;
+   text-wrap: nowrap;
+ }
+
+ .menu__item {
+   padding: 6px;
+   position: relative;
+ }
+
+ .submenu a,
+ .subsubmenu a {
+       display: flex
+;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    border-radius: .4rem;
+    color: #fff;
+   color: var(--color-tertiary);
+ }
+
+ .submenu__item--seccondary,
+ .submenu__item--tertiary {
+   position: relative;
+
+   a {
+     padding: 2rem;
+   }
+
+   & a:hover {
+     background: rgb(71, 70, 70);
+     color: white;
+   }
+ }
+
+ .submenu {
+   padding: 1rem;
+   right: -23px;
+
+   &::after {
+     content: "";
+     position: absolute;
+     top: -4rem;
+     width: 100%;
+     z-index: -3;
+     pointer-events: none;
+     height: 10rem;
+   }
+ }
+
+ .subsubmenu {
+   top: 0;
+
+   &::after {
+     content: "";
+     position: absolute;
+     top: -14px;
+     right: 3rem;
+     width: 100%;
+     z-index: -3;
+     height: 21rem;
+   }
+ }
+
+
+ .submenu li {
+   width: 100%;
+ }
+
+
+ .menu__item:hover > .submenu {
+   opacity: 1;
+   pointer-events: all;
+   transform: translateY(2.5rem);
+
+   &::after {
+     pointer-events: all;
+   }
+ }
+
+ .submenu li:hover > .subsubmenu {
+   opacity: 1;
+   pointer-events: all;
+
+   &::after {
+     pointer-events: all;
+   }
+ }

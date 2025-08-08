@@ -25,7 +25,6 @@
   --color-background-header-menu: rgba(0, 0, 0, 0.514);
   --box-shadow-color: rgba(0, 0, 0, 0.2);
   --color-dropdown-background: #f1f1f1;
-  /* Nueva variable para el color de fondo del dropdown */
 
   /* Nuevas variables para los colores del menú hamburguesa */
   --color-hamburger-background: rgba(0, 0, 0, 0.588);
@@ -56,9 +55,12 @@ html {
 body {
   background-color: var(--color-background-body);
   color: var(--color-text);
-  overflow-x: hidden;
+  overflow: hidden;
 }
-
+.main{
+  width: 100%;
+  height: 100%;
+}
 a {
   text-decoration: none;
   font-size: 1.6rem;

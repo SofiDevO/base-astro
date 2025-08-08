@@ -14,7 +14,7 @@
     "@fontsource-variable/inter": "5.1.0",
     "@types/react": "18.3.14",
     "@types/react-dom": "18.3.2",
-    "astro": "5.0.3",
+    "astro": "^5.12.8",
     "prettier": "3.4.2",
     "react": "19.0.0",
     "react-dom": "19.0.0"

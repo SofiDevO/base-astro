@@ -1,0 +1,19 @@
+---
+import HamburgerButton from "./HamburgerButton/HamburgerButton.astro";
+import NavMenu from "./nav-menu/NavMenu.astro";
+const img = "/public/img/logo.png";
+import "./header.css";
+---
+
+<script >
+  import { HamburgerButton } from "./HamburgerButton/hamburger.ts";
+
+</script>
+
+<div class="header__container">
+  <header class="header">
+    <a href="/"><img class="header__logo" src={img} alt="Logo image" /></a>
+    <NavMenu />
+    <HamburgerButton />
+  </header>
+</div>
