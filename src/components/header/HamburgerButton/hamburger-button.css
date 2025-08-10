@@ -12,9 +12,9 @@
     color: inherit;
     border: 0;
     background-color: transparent;
-    z-index: 50;
 
     @media screen and (max-width: 768px) {
+      z-index: 1000;
       display: inline-block;
     }
   }

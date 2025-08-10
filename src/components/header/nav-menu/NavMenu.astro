@@ -42,7 +42,7 @@ const pagePathname = Astro.url.pathname;
                   <li class="submenu__item submenu__item--seccondary">
                     <a href={sub.link}>
                       {sub.text}
-                      {sub.submenu && sub.submenu?.length > 0 && (
+                      {sub.submenu && Array.isArray(sub.submenu) && sub.submenu.length > 0 && (
                         <iconify-icon
                           class="iconify-arrow"
                           icon="codicon:triangle-down"
@@ -51,19 +51,13 @@ const pagePathname = Astro.url.pathname;
                         />
                       )}
                     </a>
-                    {sub.submenu && (
+                    {sub.submenu && Array.isArray(sub.submenu) && (
                       <ul class="subsubmenu">
-                        {Array.isArray(sub.submenu) ? (
-                          sub.submenu.map((subsub) => (
-                            <li class="submenu__item--tertiary">
-                              <a href={subsub.link}>{subsub.text}</a>
-                            </li>
-                          ))
-                        ) : (
-                          <li>
-                            <a href={sub?.submenu?.link}>{sub.submenu?.text}</a>
+                        {sub.submenu.map((subsub) => (
+                          <li class="submenu__item--tertiary">
+                            <a href={subsub.link}>{subsub.text}</a>
                           </li>
-                        )}
+                        ))}
                       </ul>
                     )}
                   </li>

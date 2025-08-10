@@ -1,6 +1,6 @@
 const d = document;
 
-export function HamburgerButton(hamburgerBtn: string, panel: string, menuLink: string, dropdownLink: string): void {
+export function HamburgerButton(hamburgerBtn: string, panel: string, menuLink: string): void {
   d.addEventListener("click", (e: Event) => {
     const target = e.target as Element;
 
@@ -19,5 +19,5 @@ export function HamburgerButton(hamburgerBtn: string, panel: string, menuLink: s
 }
 
 d.addEventListener("DOMContentLoaded", (e: Event) => {
-  HamburgerButton(".hamburger", ".header__menu", ".regular-link", ".dropdown__link");
+  HamburgerButton(".hamburger", ".mobile-header__menu", ".mobile-menu__link");
 });

@@ -1,0 +1,83 @@
+---
+import Logo from "@components/atoms/Logo/Logo.astro";
+import HamburgerButton from "../HamburgerButton/HamburgerButton.astro";
+import { menuItems } from "./menuItems.data";
+import "./nav-menu.css";
+const pagePathname = Astro.url.pathname;
+
+---
+
+<script>
+  import {adjustSubsubmenuPositionOnResize} from "./dropdownPosition.controller.js";
+</script>
+
+<nav class="mobile-header__menu" id="mobile-header-menu">
+  <div class="mobile-header__menu-container">
+
+    <Logo />
+  </div>
+  <ul class="mobile-menu">
+     {
+      pagePathname !== "/" && (
+        <li class="mobile-header__item">
+          <a class="mobile-menu__link" href="/" data-astro-prefetch="hover">
+            Inicio
+          </a>
+        </li>
+      )
+    }
+  {
+    menuItems.map((item) => (
+      <li class="mobile-menu__item">
+        {item.submenu ? (
+          <details>
+            <summary class="mobile-menu__sumary">
+              {item.text}
+              <iconify-icon
+                class="iconify-arrow"
+                icon="codicon:triangle-down"
+                width="15"
+                height="15"
+              />
+            </summary>
+            <ul class="mobile-submenu">
+              {Array.isArray(item.submenu)
+                ? item.submenu.map((sub) => (
+                    <li class="mobile-submenu__item mobile-submenu__item--secondary">
+                      {sub.submenu && Array.isArray(sub.submenu) && sub.submenu.length > 0 ? (
+                        <details>
+                          <summary>
+                            {sub.text}
+                            <iconify-icon
+                              class="iconify-arrow"
+                              icon="codicon:triangle-down"
+                              width="15"
+                              height="15"
+                            />
+                          </summary>
+                          <ul class="mobile-subsubmenu">
+                            {sub.submenu.map((subsub) => (
+                              <li class="mobile-submenu__item mobile-submenu__item--secondary">
+                                <a class="mobile-menu__link" href={subsub.link}>{subsub.text}</a>
+                              </li>
+                            ))}
+                          </ul>
+                        </details>
+                      ) : (
+                        <a class="mobile-menu__link" href={sub.link}>{sub.text}</a>
+                      )}
+                    </li>
+                  ))
+                : ""}
+            </ul>
+          </details>
+        ) : (
+          <a class="mobile-menu__link" href={item.link}>
+            {item.text}
+          </a>
+        )}
+      </li>
+    ))
+  }
+  </ul>
+</nav>
