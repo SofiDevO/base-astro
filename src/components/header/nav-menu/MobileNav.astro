@@ -1,8 +1,9 @@
 ---
-import Logo from "@components/atoms/Logo/Logo.astro";
 import HamburgerButton from "../HamburgerButton/HamburgerButton.astro";
 import { menuItems } from "./menuItems.data";
 import "./nav-menu.css";
+const img = "/images/sofilogo.png";
+
 const pagePathname = Astro.url.pathname;
 
 ---
@@ -11,16 +12,12 @@ const pagePathname = Astro.url.pathname;
   import {adjustSubsubmenuPositionOnResize} from "./dropdownPosition.controller.js";
 </script>
 
-<nav class="mobile-header__menu" id="mobile-header-menu">
-  <div class="mobile-header__menu-container">
-
-    <Logo />
-  </div>
-  <ul class="mobile-menu">
+<nav class="mobile-header__menu " id="mobile-header-menu">
+  <ol class="mobile-menu">
      {
       pagePathname !== "/" && (
-        <li class="mobile-header__item">
-          <a class="mobile-menu__link" href="/" data-astro-prefetch="hover">
+        <li class="header__item mobile-header__item">
+          <a class="menu__link mobile-menu__link" href="/" data-astro-prefetch="hover">
             Inicio
           </a>
         </li>
@@ -28,48 +25,50 @@ const pagePathname = Astro.url.pathname;
     }
   {
     menuItems.map((item) => (
-      <li class="mobile-menu__item">
+      <li >
         {item.submenu ? (
-          <details>
-            <summary class="mobile-menu__sumary">
+          <details class="mobile-details">
+            <summary class="menu__sumary">
               {item.text}
               <iconify-icon
                 class="iconify-arrow"
                 icon="codicon:triangle-down"
                 width="15"
                 height="15"
+                style="color: var(--light-spot-color);"
               />
             </summary>
-            <ul class="mobile-submenu">
+            <ol class="mobile-submenu">
               {Array.isArray(item.submenu)
                 ? item.submenu.map((sub) => (
-                    <li class="mobile-submenu__item mobile-submenu__item--secondary">
+                    <li >
                       {sub.submenu && Array.isArray(sub.submenu) && sub.submenu.length > 0 ? (
-                        <details>
-                          <summary>
+                        <details class="mobile-details">
+                          <summary class="menu__summary">
                             {sub.text}
                             <iconify-icon
                               class="iconify-arrow"
                               icon="codicon:triangle-down"
                               width="15"
                               height="15"
+                              style="color: var(--light-spot-color);"
                             />
                           </summary>
-                          <ul class="mobile-subsubmenu">
+                          <ol class="mobile-subsubmenu">
                             {sub.submenu.map((subsub) => (
-                              <li class="mobile-submenu__item mobile-submenu__item--secondary">
-                                <a class="mobile-menu__link" href={subsub.link}>{subsub.text}</a>
+                              <li class="mobile-submenu__item secondary">
+                                <a class="menu__link  mobile-menu__link" href={subsub.link}>{subsub.text}</a>
                               </li>
                             ))}
-                          </ul>
+                          </ol>
                         </details>
                       ) : (
-                        <a class="mobile-menu__link" href={sub.link}>{sub.text}</a>
+                        <a class="menu__link mobile-menu__link" href={sub.link}>{sub.text}</a>
                       )}
                     </li>
                   ))
                 : ""}
-            </ul>
+            </>
           </details>
         ) : (
           <a class="mobile-menu__link" href={item.link}>
@@ -79,5 +78,5 @@ const pagePathname = Astro.url.pathname;
       </li>
     ))
   }
-  </ul>
+  </ol>
 </nav>
