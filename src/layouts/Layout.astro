@@ -2,6 +2,12 @@
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Header from "@components/header/Header.astro";
+
+export interface Props {
+  headerType?: "floating" | "fullscreen";
+}
+
+const { headerType = "floating" } = Astro.props;
 ---
 
 <html lang="en">
@@ -10,7 +16,7 @@ import Header from "@components/header/Header.astro";
   </head>
   <body>
 
-    <Header />
+    <Header headerType={headerType} />
     <main>
       <slot />
     </main>
