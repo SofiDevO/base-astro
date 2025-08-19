@@ -1,7 +1,7 @@
 ---
 import HamburgerButton from "./HamburgerButton/HamburgerButton.astro";
 import NavMenu from "./nav-menu/NavMenu.astro";
-const img = "/public/img/logo.png";
+const img = "/img/logo.png";
 
 import MobileNav from "./nav-menu/MobileNav.astro";
 
@@ -37,7 +37,7 @@ const { headerType = "floating" } = Astro.props;
     margin: 0 auto;
     position: fixed;
     z-index: 10;
-    
+
     @media (width < 768px) {
       justify-content: flex-end;
       align-items: flex-end;
@@ -63,7 +63,7 @@ const { headerType = "floating" } = Astro.props;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     justify-content: space-between;
-    
+
     @media (width < 768px) {
       align-self: flex-end;
       padding: 0.4rem;
@@ -76,7 +76,7 @@ const { headerType = "floating" } = Astro.props;
     max-width: 1100px;
     border-radius: 18px;
     padding: 0.5rem 1rem;
-    
+
     @media (width < 768px) {
       max-width: 95%;
     }
@@ -86,7 +86,7 @@ const { headerType = "floating" } = Astro.props;
   .header--fullscreen {
     border-radius: 0;
     padding: 1rem 2rem;
-    
+
     @media (width < 768px) {
       max-width: 100%;
       padding: 0.8rem 1rem;
