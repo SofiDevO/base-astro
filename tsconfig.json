@@ -4,6 +4,9 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "baseUrl": ".",
+  "moduleResolution": "nodenext",
+  "module": "NodeNext",
+  "verbatimModuleSyntax": false,
     "paths": {
       "@components/*": ["src/components/*"],
       "@src/*": ["src/*"],

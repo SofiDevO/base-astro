@@ -5,14 +5,41 @@ import BackgroundGradient from "@components/atoms/GradientBg/BackgroundGradient.
 
 <Layout headerType="floating">
   <BackgroundGradient>
-    <div style="height: 100vh; padding: 2rem; padding-top: 120px;">
+    <div class="header-demo">
       <h1>Header Demo</h1>
-      <p>Este es un ejemplo del header en modo "floating" (flotante).</p>
-      <p>
+      <p>Este es un ejemplo del header en modo "floating" (flotante)
         Para cambiar a modo "fullscreen", simplemente cambia la prop
         headerType="fullscreen" en el Layout.
       </p>
-      <p><a href="/fullscreen-demo">Ver demo fullscreen</a></p>
+      <a href="/fullscreen-demo">Ver demo fullscreen</a>
     </div>
   </BackgroundGradient>
 </Layout>
+
+<style >
+
+  .header-demo {
+    text-align: left;
+    padding: 2rem;
+    max-width: 800px;
+    line-height: 1.6;
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    p{
+      font-size: 1.5rem;
+    }
+    a {
+      color: aqua;
+      font-size: 2rem;
+      background-color: black;
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      border: 1px solid aqua;
+    }
+  }
+  .header-demo > *:not(:last-child){
+    margin-bottom: 2rem;
+  }
+</style>

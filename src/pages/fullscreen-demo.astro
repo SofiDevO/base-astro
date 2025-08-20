@@ -5,17 +5,55 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout headerType="fullscreen">
   <BackgroundGradient>
-    <div style="height: 100vh; padding: 2rem; padding-top: 100px;">
-      <h1>Fullscreen Header Demo</h1>
-      <p>Este es un ejemplo del header en modo "fullscreen".</p>
-      <p>Nota las diferencias:</p>
+    <div class="header-demo">
+      <h1>Header Demo</h1>
+      <p>Este es un ejemplo del header en modo "fullscreen".
+        Nota las diferencias con el modo "floating":
+      </p>
       <ul>
         <li>Sin padding en el contenedor del header</li>
         <li>Sin border-radius</li>
         <li>Ocupa todo el ancho de la pantalla</li>
         <li>Padding interno ajustado para modo fullscreen</li>
       </ul>
-      <p><a href="/">Volver al demo floating</a></p>
+      <a href="/">Ver demo fullscreen</a>
     </div>
   </BackgroundGradient>
 </Layout>
+
+
+<style >
+
+  .header-demo {
+    text-align: left;
+    padding: 2rem;
+    max-width: 800px;
+    line-height: 1.6;
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    p{
+      font-size: 1.5rem;
+    }
+    a {
+      color: aqua;
+      font-size: 2rem;
+      background-color: black;
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      border: 1px solid aqua;
+    }
+    ul {
+      margin-left: 1.5rem;
+      li {
+        margin-bottom: 0.5rem;
+        list-style: disc;
+        font-size: 1.4rem;
+      }
+    }
+  }
+  .header-demo > *:not(:last-child){
+    margin-bottom: 2rem;
+  }
+</style>

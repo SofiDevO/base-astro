@@ -1,13 +1,13 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import Header from "@components/header/Header.astro";
 
-export interface Props {
-  headerType?: "floating" | "fullscreen";
-}
+import Header from '@sofidevo/astro-dynamic-header/Header';
 
-const { headerType = "floating" } = Astro.props;
+
+const {headerType } = Astro.props;
+
+import { menuItems } from "@src/menuItems.data.js";
 ---
 
 <html lang="en">
@@ -16,10 +16,26 @@ const { headerType = "floating" } = Astro.props;
   </head>
   <body>
 
-    <Header headerType={headerType} />
+    <Header headerType={headerType} menuItems={menuItems}  logoSrc="/img/logo.png" />
+
     <main>
       <slot />
     </main>
     <!-- <Footer /> -->
   </body>
 </html>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height:100%;
+    min-height: 100dvh;
+    width: 100%;
+    max-width: 1100px;
+    padding: 2rem;
+  }
+</style>
