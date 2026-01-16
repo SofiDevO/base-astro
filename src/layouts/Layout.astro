@@ -1,6 +1,6 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts.ts";
 
 import Header from '@sofidevo/astro-dynamic-header/Header';
 
@@ -16,10 +16,14 @@ import { menuItems } from "@src/menuItems.data.js";
   </head>
   <body>
 
-    <Header headerType={headerType} menuItems={menuItems}  logoSrc="/img/logo.png" />
-
-    <main>
-      <slot />
+      <Header
+      headerType={headerType}
+      menuItems={menuItems}
+      logoSrc="/img/logo.png"
+      logoWidth="110px"
+      />
+      <main>
+        <slot />
     </main>
     <!-- <Footer /> -->
   </body>
