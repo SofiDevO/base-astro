@@ -1,4 +1,4 @@
 
 
-export const SITE_TITLE = 'Frida IA';
-export const SITE_DESCRIPTION = 'El más potente generador de imágenes IA';
+export const SITE_TITLE = 'Astro Dynamic Header';
+export const SITE_DESCRIPTION = 'A dynamic header component for Astro projects.';

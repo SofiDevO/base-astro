@@ -19,9 +19,13 @@ import { menuItems } from "@src/menuItems.data.js";
       <Header
       headerType={headerType}
       menuItems={menuItems}
-      logoSrc="/img/logo.png"
-      logoWidth="110px"
-      />
+      logoSrc="https://itssofi.dev/img/icons/sofi-icon.webp"
+      logoWidth="50px"
+      logoText="SofiDev"
+      >
+      <a slot="actions" class="action-button" href="https://ko-fi.com/sofidev" target="_blank"> Buy me a coffe </a>
+    </Header>
+
       <main>
         <slot />
     </main>
@@ -29,7 +33,7 @@ import { menuItems } from "@src/menuItems.data.js";
   </body>
 </html>
 
-<style>
+<style is:global>
   main {
     display: flex;
     flex-direction: column;
@@ -40,6 +44,15 @@ import { menuItems } from "@src/menuItems.data.js";
     min-height: 100dvh;
     width: 100%;
     max-width: 1100px;
-    padding: 2rem;
+    padding: 20px;
+  }
+  .action-button {
+    color: aqua;
+    font-size: 16px;
+    background-color: black;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid aqua;
+    text-decoration: none;
   }
 </style>

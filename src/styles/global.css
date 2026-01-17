@@ -46,8 +46,6 @@ rgba(114, 0, 232, 1) 100%);
 }
 
 html {
-  margin: 0;
-  font-size: 62.5%;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
 }
@@ -63,7 +61,6 @@ body {
 }
 a {
   text-decoration: none;
-  font-size: 1.6rem;
 }
 ul{
   padding: 0;

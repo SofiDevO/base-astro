@@ -9,7 +9,8 @@ import BackgroundGradient from "@components/atoms/GradientBg/BackgroundGradient.
       <h1>Header Demo</h1>
       <p>This is an example of the header in "floating" mode.
         To switch to "fullscreen" mode, simply change the prop
-        headerType="fullscreen" in the Layout.
+        <code>
+            headerType="fullscreen" </code> in the Layout.
       </p>
       <a href="/fullscreen-demo">View fullscreen demo</a>
       <a href="https://www.npmjs.com/package/@sofidevo/astro-dynamic-header?activeTab=readme" target="_blank">Check on npm package</a>
@@ -21,27 +22,41 @@ import BackgroundGradient from "@components/atoms/GradientBg/BackgroundGradient.
 <style >
 
   .header-demo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     text-align: left;
-    padding: 2rem;
+    padding: 20px;
     max-width: 800px;
     line-height: 1.6;
     h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+      font-size: 30px;
+      margin-bottom: 10px;
     }
     p{
-      font-size: 1.5rem;
+      font-size: 15px;
     }
     a {
       color: aqua;
-      font-size: 2rem;
+      font-size: 20px;
+      width: fit-content;
       background-color: black;
-      padding: 1rem 2rem;
+      padding: 10px;
       border-radius: 4px;
       border: 1px solid aqua;
+      margin-bottom: 1rem;
+    }
+    code{
+      background-color: #222;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: aqua;
+      margin-right: 10px;
     }
   }
+
   .header-demo > *:not(:last-child){
-    margin-bottom: 2rem;
+    margin-bottom: 20px;
   }
 </style>
